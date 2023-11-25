@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
+import 'package:investment/UI/view/pages/walkthrough/refer.dart';
 import 'package:investment/const/app_colors.dart';
 import 'package:investment/controller/api/currency/realtime_currency_price.dart';
 import 'package:investment/controller/api/currency/utils.dart';
@@ -19,14 +20,15 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   @override
   void initState() {
-    btcListen();
-    bnbListen();
-    ethListen();
-    dogeListen();
-    trxListen();
-    sandListen();
-    nexoListen();
-    shibListen();
+    // this listen called in getx on initialization
+    // btcListen();
+    // bnbListen();
+    // ethListen();
+    // dogeListen();
+    // trxListen();
+    // sandListen();
+    // nexoListen();
+    // shibListen();
     super.initState();
   }
   bool ispressed = false;
@@ -177,26 +179,26 @@ class _DashBoardState extends State<DashBoard> {
                         //Fund
                         InkWell(
                           onTap: () {
-                            Get.toNamed(AppRoutes.information);
+                             Get.to(()=>Refer());
                           },
                           child: dashButton(
-                              'assets/icons/account_balance_wallet_24px.png',
+                              'assets/images/share_.png',
                               AppColors.homeBGcolor,
                               'Share Friends',
                               Colors.white),
                         ),
                         InkWell(
                           onTap: () {
-                          
+                            Get.to(()=>Refer());
                           },
-                          child: dashButton('assets/icons/input_24px.png',
+                          child: dashButton('assets/images/team.png',
                               AppColors.homeBGcolor, 'Teams', Colors.white),
                         ),
                         InkWell(
                           onTap: () {
                             Get.toNamed(AppRoutes.information);
                           },
-                          child: dashButton('assets/icons/input_24px2.png',
+                          child: dashButton('assets/images/info.png',
                               AppColors.homeBGcolor, 'Information', Colors.white),
                         )
                       ],

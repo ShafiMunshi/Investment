@@ -7,7 +7,7 @@ btcListen() {
     Map getData = jsonDecode(message);
 
     btcPrice.value = getData['p'];
-    print(" ljflkafoijk ehkfklfkjv kfljdssssssssssssssssklaf vnnnvkdfajf nflkv nfskldj kl vh $btcPrice.value");
+    // print(" ljflkafoijk ehkfklfkjv kfljdssssssssssssssssklaf vnnnvkdfajf nflkv nfskldj kl vh $btcPrice.value");
   });
 }
 

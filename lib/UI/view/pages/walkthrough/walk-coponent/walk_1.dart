@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk2.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/demo.dart';
+
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/const/app_colors.dart';
 import 'package:investment/const/app_string.dart';
 
 
-import 'walk-coponent/demo.dart';
+
 
 class Walk1 extends StatelessWidget {
   const Walk1({Key? key}) : super(key: key);

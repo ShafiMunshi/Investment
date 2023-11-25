@@ -134,12 +134,12 @@ amountSelector(flag, txt, amount, txtClr, bgClr) {
   );
 }
 
-smalTxt2(txt) {
+smalTxt2(txt,{ double size=10.0}) {
   return Text(
     txt,
     style: TextStyle(
         color: AppColors.greytrxClr2,
-        fontSize: 10.sp,
+        fontSize: size.sp,
         fontFamily: 'Gelion',
         fontWeight: FontWeight.w500),
   );
@@ -338,7 +338,9 @@ Widget dashButton(asset, bgClr, Txt, txtClr) {
         backgroundColor: bgClr,
         child: Image.asset(
           asset,
-          width: 18.h,
+          color: Colors.white,
+          width: 19.h,
+          fit: BoxFit.cover,
         ),
         radius: 25.r,
       ),

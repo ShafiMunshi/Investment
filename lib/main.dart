@@ -6,7 +6,10 @@ import 'package:investment/UI/view/bottomNav/Dashboard/dash_board.dart';
 import 'package:investment/UI/view/bottomNav/Dashboard/information.dart';
 import 'package:investment/UI/view/bottomNav/Dashboard/withdraw.dart';
 import 'package:investment/UI/view/bottomNav/btmNavbar.dart';
+import 'package:investment/UI/view/pages/walkthrough/refer.dart';
+import 'package:investment/UI/view/pages/walkthrough/success_popup_screen.dart';
 import 'package:investment/controller/auth_controller.dart';
+import 'package:investment/controller/dashboard_controller.dart';
 import 'package:investment/dependency.dart';
 
 import 'splash/splash_screen.dart';
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
       builder: (_, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: BindingsBuilder(() {
-          // Get.put(AuthController());
+          Get.put(DashboardController(),permanent: true);
         }),
         home: BtmNavBar(),
         getPages: AppRoutes().getpages,

@@ -5,9 +5,9 @@ import 'package:investment/UI/view/auth/login.dart';
 import 'package:investment/UI/view/auth/register.dart';
 import 'package:investment/UI/view/bottomNav/Dashboard/information.dart';
 import 'package:investment/UI/view/bottomNav/Dashboard/withdraw.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk2.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk3.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk_1.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk2.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk3.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk_1.dart';
 import 'package:investment/controller/auth_controller.dart';
 
 import '../../splash/splash_screen.dart';
@@ -22,6 +22,7 @@ class AppRoutes {
   static const String register = "/register";
   static const String withdraw = "/withdraw";
   static const String information = "/information";
+  static const String dashboard = "/dashboard";
 
   List<GetPage> getpages = [
     GetPage(

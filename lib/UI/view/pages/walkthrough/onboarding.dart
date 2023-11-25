@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk2.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk3.dart';
-import 'package:investment/UI/view/pages/walkthrough/walk_1.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk2.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk3.dart';
+import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk_1.dart';
+
 
 
 class Onboard extends StatelessWidget {

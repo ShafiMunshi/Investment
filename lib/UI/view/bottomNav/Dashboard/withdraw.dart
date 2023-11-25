@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:investment/UI/view/bottomNav/card/card.dart';
+import 'package:investment/UI/view/pages/walkthrough/success_popup_screen.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/widget/custom_appbar.dart';
 
@@ -131,6 +134,7 @@ class _WithdrawState extends State<Withdraw> {
               onTap: (){
                 if(formKey.currentState!.validate()){
                   // send the request to admin
+                  Get.to(()=> SuccessPopUp());
                 }
               },
               child: loginWidget(Colors.greenAccent, 'Withdraw'))
