@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- permissinons -->
+<uses-permission android:name="android.permission.INTERNET"/>
+<!-- permissinons end -->
     <application
         android:label="investment"
         android:name="${applicationName}"

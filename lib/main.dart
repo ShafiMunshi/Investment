@@ -25,12 +25,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812), 
+      designSize: const Size(375, 812),
       builder: (_, child) => GetMaterialApp(
+        debugShowCheckedModeBanner: false,
         initialBinding: BindingsBuilder(() {
           // Get.put(AuthController());
         }),
-        home:  BtmNavBar(),
+        home: BtmNavBar(),
         getPages: AppRoutes().getpages,
       ),
     );

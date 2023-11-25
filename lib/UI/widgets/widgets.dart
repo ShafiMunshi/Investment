@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:investment/const/app_colors.dart';
 
 fundWidget(btnTxt) {
@@ -184,60 +185,62 @@ viewAll() {
 }
 
 Widget trxx(iconss, iconBG, title, trxValue) {
-  return Container(
-    alignment: Alignment.center,
-    height: 56.h,
-    decoration: BoxDecoration(
-        border: Border.symmetric(
-            horizontal: BorderSide(
-      color: Colors.grey,
-      width: 1,
-    ))),
-    child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      CircleAvatar(
-          backgroundColor: iconBG,
-          child: Image.asset(
-            iconss,
-            width: 30.w,
-          )),
-      SizedBox(
-        width: 13.w,
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-                color: AppColors.currencyClr,
-                fontSize: 14.sp,
-                fontFamily: 'Circular Std',
-                fontWeight: FontWeight.w500),
-          ),
-          SizedBox(
-            height: 2.h,
-          ),
-          Text(
-            '28 Jun,2022',
-            style: TextStyle(
-                color: AppColors.greytrxClr,
-                fontSize: 10.sp,
-                fontFamily: 'Gelion',
-                fontWeight: FontWeight.w400),
-          ),
-        ],
-      ),
-      Spacer(),
-      Text(
-        trxValue,
-        style: TextStyle(
-            color: AppColors.currencyClr,
-            fontSize: 16.sp,
-            fontFamily: 'Gelion',
-            fontWeight: FontWeight.w600),
-      ),
-    ]),
+  return 
+     Container(
+      alignment: Alignment.center,
+      height: 56.h,
+      decoration: const BoxDecoration(
+          border: Border.symmetric(
+              horizontal: BorderSide(
+        color: Colors.grey,
+        width: 1,
+      ))),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        CircleAvatar(
+            backgroundColor: iconBG,
+            child: Image.network(
+              iconss,
+              width: 30.w,
+            )),
+        SizedBox(
+          width: 13.w,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                  color: AppColors.currencyClr,
+                  fontSize: 14.sp,
+                  fontFamily: 'Circular Std',
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              '28 Jun,2022',
+              style: TextStyle(
+                  color: AppColors.greytrxClr,
+                  fontSize: 10.sp,
+                  fontFamily: 'Gelion',
+                  fontWeight: FontWeight.w400),
+            ),
+          ],
+        ),
+        Spacer(),
+        Text(
+          trxValue,
+          style: TextStyle(
+              color: AppColors.currencyClr,
+              fontSize: 16.sp,
+              fontFamily: 'Gelion',
+              fontWeight: FontWeight.w600),
+        ),
+      ]),
+   
   );
 }
 

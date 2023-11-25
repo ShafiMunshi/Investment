@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
-import 'package:investment/UI/view/bottomNav/Dashboard/withdraw.dart';
 import 'package:investment/const/app_colors.dart';
+import 'package:investment/controller/api/currency/realtime_currency_price.dart';
+import 'package:investment/controller/api/currency/utils.dart';
+
 
 import '../../../widgets/widgets.dart';
 
@@ -15,12 +17,24 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  @override
+  void initState() {
+    btcListen();
+    bnbListen();
+    ethListen();
+    dogeListen();
+    trxListen();
+    sandListen();
+    nexoListen();
+    shibListen();
+    super.initState();
+  }
   bool ispressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // bottomNavigationBar: BtmNavBar(),
-      body: Container(
+      body: SizedBox(
         height: double.maxFinite,
         width: double.maxFinite,
         child: Stack(
@@ -35,57 +49,55 @@ class _DashBoardState extends State<DashBoard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //Avatar Section
-                  Container(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CircleAvatar(
-                          child: Text(
-                            'OP',
-                            style: TextStyle(fontSize: 14.sp),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 20.r,
+                        child: Text(
+                          'OP',
+                          style: TextStyle(fontSize: 14.sp),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Hello, Precious',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.sp,
+                                fontFamily: 'Gelion',
+                                fontWeight: FontWeight.w600),
                           ),
-                          radius: 20.r,
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Hello, Precious',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontFamily: 'Gelion',
-                                  fontWeight: FontWeight.w600),
+                          Text(
+                            'Su/Pre123',
+                            style: TextStyle(
+                              fontSize: 9.sp,
+                              fontFamily: 'Circular Std',
+                              color: AppColors.smallTextclr,
                             ),
-                            Text(
-                              'Su/Pre123',
-                              style: TextStyle(
-                                fontSize: 9.sp,
-                                fontFamily: 'Circular Std',
-                                color: AppColors.smallTextclr,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.notifications_active_outlined,
-                              color: Colors.white,
-                              size: 20.r,
-                            ))
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.notifications_active_outlined,
+                            color: Colors.white,
+                            size: 20.r,
+                          ))
+                    ],
                   ),
                   SizedBox(
                     height: 20.h,
                   ),
                   //Currency Section
-                  Container(
+                  SizedBox(
                     height: 95.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -213,7 +225,7 @@ class _DashBoardState extends State<DashBoard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     //recent
-                    recenTxt9('Recent Transaction'),
+                    recenTxt9('Currencies Price'),
 
                     SizedBox(
                       height: 7.h,
@@ -222,29 +234,29 @@ class _DashBoardState extends State<DashBoard> {
                     // Recent Transaction Section
                     Expanded(
                       // height: 315.h,
-                      child: ListView(
-                        physics: BouncingScrollPhysics(),
+                      child: Obx(() => ListView(
+                        physics: const BouncingScrollPhysics(),
                         children: [
-                          trxx('assets/icons/call_received_24px.png',
-                              AppColors.callInClr, 'Access Bank', '\$2400'),
-                          trxx('assets/icons/call_made_24px.png',
-                              AppColors.callOutClr, 'Alpha Loans', 'N10,000'),
-                          trxx('assets/icons/call_received_24px.png',
-                              AppColors.callInClr, 'Access Bank', 'N4,500,000'),
-                          trxx('assets/icons/call_made_24px.png',
-                              AppColors.callOutClr, 'Alpha Loans', 'N10,000'),
-                          trxx('assets/icons/call_received_24px.png',
-                              AppColors.callInClr, 'Access Bank', 'N4000'),
-                          trxx('assets/icons/call_made_24px.png',
-                              AppColors.callOutClr, 'Alpha Loans', 'N10,000'),
-                          trxx('assets/icons/call_received_24px.png',
-                              AppColors.callInClr, 'Access Bank', 'N4000'),
-                          trxx('assets/icons/call_made_24px.png',
-                              AppColors.callOutClr, 'Alpha Loans', 'N10,000'),
-                          trxx('assets/icons/call_received_24px.png',
-                              AppColors.callInClr, 'Access Bank', 'N4000'),
+                          trxx('https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1024px-Bitcoin.svg.png',
+                              AppColors.callInClr, 'BTC', '\$ ${btcPrice.value.toString()}'),
+                          trxx('https://s2.coinmarketcap.com/static/img/coins/200x200/1839.png',
+                              AppColors.callOutClr, 'BNB', '\$ ${bnbPrice.value.toString()}'),
+                          trxx('https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/ZJZZK5B2ZNF25LYQHMUTBTOMLU.png',
+                              AppColors.callInClr, 'ETH', '\$ ${ethPrice.value.toString()}'),
+                          trxx('https://s2.coinmarketcap.com/static/img/coins/200x200/74.png',
+                              AppColors.callOutClr, 'DOGE', '\$ ${dogePrice.value.toString()}'),
+                          trxx('https://logowik.com/content/uploads/images/tron-coin-trx6384.jpg',
+                              AppColors.callInClr, 'TRX', '\$ ${trxPrice.value.toString()}'),
+                          trxx('https://cryptologos.cc/logos/the-sandbox-sand-logo.png',
+                              AppColors.callOutClr, 'SAND', '\$ ${sandPrice.value.toString()}'),
+                          trxx('https://cdn1-production-images-kly.akamaized.net/Dw8gt2A0j0qvOGJkq0Eyb-x2GnM=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4012029/original/044691400_1651301609-Nexo_2.jpg',
+                              AppColors.callInClr, 'NEXO', '\$ ${nexoPrice.value.toString()}'),
+                          trxx('https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png',
+                              AppColors.callOutClr, 'SHIB', '\$ ${shibPrice.value.toString()}'),
+                          // trxx('assets/icons/call_received_24px.png',
+                          //     AppColors.callInClr, 'Access Bank', 'N4000'),
                         ],
-                      ),
+                      ),)
                     ),
                     SizedBox(
                       height: 3.h,
