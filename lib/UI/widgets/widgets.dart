@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:investment/const/app_colors.dart';
 
 fundWidget(btnTxt) {
@@ -89,7 +88,7 @@ amountSelector(flag, txt, amount, txtClr, bgClr) {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 1,
               blurRadius: 9,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
           border: Border.all(
@@ -197,7 +196,7 @@ Widget trxx(iconss, iconBG, title, trxValue) {
       ))),
       child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         CircleAvatar(
-            backgroundColor: iconBG,
+            backgroundColor: Colors.transparent,
             child: Image.network(
               iconss,
               width: 30.w,
@@ -230,7 +229,7 @@ Widget trxx(iconss, iconBG, title, trxValue) {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Text(
           trxValue,
           style: TextStyle(
@@ -284,7 +283,7 @@ Widget currencyCSection(asset, currTxt, currValue, ValueClr, bgClr) {
                 fontFamily: 'Circular Std',
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Icon(
               Icons.visibility_outlined,
               size: 13.sp,

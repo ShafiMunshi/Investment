@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:investment/UI/view/bottomNav/card/card.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/widget/custom_appbar.dart';
 
@@ -59,7 +57,7 @@ class PlanBoxWidget extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('$planeName',style: TextStyle(
+                  Text(planeName,style: TextStyle(
                     color: Colors.white,
                     fontSize: 26.sp,
                     fontWeight: FontWeight.bold,
@@ -117,7 +115,7 @@ class PlanBoxWidget extends StatelessWidget {
 
                       SizedBox(height: 10.h),
 
-                      Divider(),
+                      const Divider(),
                       SizedBox(height: 10.h,),
 
                       GestureDetector(

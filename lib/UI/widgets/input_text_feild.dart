@@ -9,7 +9,7 @@ class EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 57.h,
       child: TextFormField(
           controller: controller,
@@ -51,7 +51,7 @@ class ReferCodeTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 57.h,
       child: TextFormField(
           controller: controller,
@@ -63,6 +63,7 @@ class ReferCodeTextField extends StatelessWidget {
             }else if(value.length!=6){
               return 'code must be 6 characters';
             }
+            return null;
           },
           decoration: const InputDecoration(
               hintText: 'Enter your Referral Code',
@@ -85,7 +86,7 @@ class ReferCodeTextField extends StatelessWidget {
 }
 
 class PasswordTextFeild extends StatefulWidget {
-  PasswordTextFeild({super.key, required this.controller});
+  const PasswordTextFeild({super.key, required this.controller});
   final TextEditingController controller;
 
   @override
@@ -97,7 +98,7 @@ class _PasswordTextFeildState extends State<PasswordTextFeild> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 57.h,
       child: TextFormField(
         controller: widget.controller,
@@ -105,9 +106,10 @@ class _PasswordTextFeildState extends State<PasswordTextFeild> {
         validator: (pass) {
           if (pass!.isEmpty) {
             return 'Check & Retype your password';
-          } else if (pass!.length < 6) {
+          } else if (pass.length < 6) {
             return 'Password must be at least 6 characters';
           }
+          return null;
         },
         decoration: InputDecoration(
             hintText: 'Enter your Password',

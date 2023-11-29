@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:investment/UI/view/bottomNav/card/card.dart';
 import 'package:investment/UI/view/pages/walkthrough/success_popup_screen.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/widget/custom_appbar.dart';
 
 class Withdraw extends StatefulWidget {
-  Withdraw({super.key});
+  const Withdraw({super.key});
 
   @override
   State<Withdraw> createState() => _WithdrawState();
@@ -31,7 +29,7 @@ class _WithdrawState extends State<Withdraw> {
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [Colors.greenAccent, Colors.green])),
@@ -91,7 +89,7 @@ class _WithdrawState extends State<Withdraw> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Form(
@@ -106,11 +104,11 @@ class _WithdrawState extends State<Withdraw> {
                   }
                 },
                 decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(),
-                  enabledBorder: OutlineInputBorder(),
+                  focusedBorder: const OutlineInputBorder(),
+                  enabledBorder: const OutlineInputBorder(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.r),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.grey,
                       width: 1,
                     ),
@@ -134,7 +132,7 @@ class _WithdrawState extends State<Withdraw> {
               onTap: (){
                 if(formKey.currentState!.validate()){
                   // send the request to admin
-                  Get.to(()=> SuccessPopUp());
+                  Get.to(()=> const SuccessPopUp());
                 }
               },
               child: loginWidget(Colors.greenAccent, 'Withdraw'))

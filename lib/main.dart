@@ -2,17 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
-import 'package:investment/UI/view/bottomNav/Dashboard/dash_board.dart';
-import 'package:investment/UI/view/bottomNav/Dashboard/information.dart';
-import 'package:investment/UI/view/bottomNav/Dashboard/withdraw.dart';
+import 'package:investment/UI/view/bottomNav/Dashboard/promotion.dart';
 import 'package:investment/UI/view/bottomNav/btmNavbar.dart';
-import 'package:investment/UI/view/pages/walkthrough/refer.dart';
-import 'package:investment/UI/view/pages/walkthrough/success_popup_screen.dart';
-import 'package:investment/controller/auth_controller.dart';
 import 'package:investment/controller/dashboard_controller.dart';
 import 'package:investment/dependency.dart';
 
-import 'splash/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +28,8 @@ class MyApp extends StatelessWidget {
         initialBinding: BindingsBuilder(() {
           Get.put(DashboardController(),permanent: true);
         }),
-        home: BtmNavBar(),
+        theme: ThemeData(useMaterial3: true),
+         home: BtmNavBar(),
         getPages: AppRoutes().getpages,
       ),
     );

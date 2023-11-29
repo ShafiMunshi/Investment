@@ -46,7 +46,7 @@ class Trxlisst extends StatelessWidget {
           SizedBox(height: gap //43.h,
               ),
           recenTxt9('Recent Transaction'),
-          Container(
+          SizedBox(
             height: listViewHeight, //315.h,
             child: ListView(
               children: [

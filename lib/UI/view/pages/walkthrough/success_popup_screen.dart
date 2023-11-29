@@ -37,7 +37,7 @@ class SuccessPopUp extends StatelessWidget {
                 Text(
                   'Succes',
                   style: TextStyle(
-                      color: Color(0xFF002251),
+                      color: const Color(0xFF002251),
                       fontSize: 25.sp,
                       fontFamily: 'Circular Std',
                       fontWeight: FontWeight.w500),
@@ -178,7 +178,7 @@ class SuccessPopUp extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          color: Color(0xFF002251),
+          color: const Color(0xFF002251),
           fontSize: size.sp,
           fontFamily: 'Circular Std',
           fontWeight: FontWeight.w500),

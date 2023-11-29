@@ -13,7 +13,7 @@ class Cardss extends StatelessWidget {
     return Scaffold(
       floatingActionButton: floatingbtn(),
       backgroundColor: AppColors.lightWhiteClr,
-      body: Container(
+      body: SizedBox(
         height: 812.h,
         width: 375.w,
         child: Stack(
@@ -23,7 +23,7 @@ class Cardss extends StatelessWidget {
                 top: 57.r,
                 left: 10.r,
               ),
-              height: 261.h,
+              height: 267.h,
               width: 375.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,8 +36,8 @@ class Cardss extends StatelessWidget {
                     height: 30.h,
                   ),
                   //Card Section
-                  Container(
-                    height: 146.h,
+                  SizedBox(
+                    height: 148.h,
                     child:
                         ListView(scrollDirection: Axis.horizontal, children: [
                       CardDetail(
@@ -47,7 +47,7 @@ class Cardss extends StatelessWidget {
                         AppColors.cardClr,
                       ),
                       SizedBox(
-                        width: 30.w,
+                        width: 29.w,
                       ),
                       CardDetail(
                         '**** **** **** *379',
@@ -70,9 +70,9 @@ class Cardss extends StatelessWidget {
                 ),
                 child: Trxlisst(
                     heightt: 490.h,
-                    fundBtm: SizedBox(height: 0),
-                    SmBtm: SizedBox(height: 0),
-                    WitdrBtm: SizedBox(height: 0),
+                    fundBtm: const SizedBox(height: 0),
+                    SmBtm: const SizedBox(height: 0),
+                    WitdrBtm: const SizedBox(height: 0),
                     gap: 0.h,
                     listViewHeight: 393.h),
               ),
@@ -92,7 +92,7 @@ Widget CardDetail(cardNum, cardName, exp, cardClr) {
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.r),
         color: cardClr,
-        image: DecorationImage(image: AssetImage('assets/icons/Path5.png'))),
+        image: const DecorationImage(image: AssetImage('assets/icons/Path5.png'))),
     padding: EdgeInsets.only(top: 23.r, left: 20.r, right: 20.r),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ Widget CardDetail(cardNum, cardName, exp, cardClr) {
           height: 17.h,
         ),
         smaltxt('CARD NUMBER'),
-        SizedBox(
+        const SizedBox(
           height: 2,
         ),
         bigTxtt(cardNum),

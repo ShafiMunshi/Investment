@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 1), () => Get.to(Onboard()));
+    Timer(const Duration(seconds: 1), () => Get.to(const Onboard()));
     // TODO: implement initState
     super.initState();
   }
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           height: 108.h,
           width: 118.w,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(image: AssetImage('assets/logo/logo.png')),
           ),
         ),

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
+import 'package:investment/UI/view/bottomNav/Dashboard/promotion.dart';
 import 'package:investment/UI/view/pages/walkthrough/refer.dart';
 import 'package:investment/const/app_colors.dart';
-import 'package:investment/controller/api/currency/realtime_currency_price.dart';
 import 'package:investment/controller/api/currency/utils.dart';
+import 'package:share_plus/share_plus.dart';
 
 
 import '../../../widgets/widgets.dart';
@@ -100,7 +101,7 @@ class _DashBoardState extends State<DashBoard> {
                   ),
                   //Currency Section
                   SizedBox(
-                    height: 95.h,
+                    height: 97.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -178,8 +179,9 @@ class _DashBoardState extends State<DashBoard> {
                       children: [
                         //Fund
                         InkWell(
-                          onTap: () {
-                             Get.to(()=>Refer());
+                          onTap: ()async {
+                            String appUrl = "www.facebook.com" ;
+                             Share.share('Download to earn money free \n\n$appUrl');
                           },
                           child: dashButton(
                               'assets/images/share_.png',
@@ -189,17 +191,17 @@ class _DashBoardState extends State<DashBoard> {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(()=>Refer());
+                            Get.to(()=>const Refer());
                           },
                           child: dashButton('assets/images/team.png',
                               AppColors.homeBGcolor, 'Teams', Colors.white),
                         ),
                         InkWell(
                           onTap: () {
-                            Get.toNamed(AppRoutes.information);
+                            Get.to(()=> const Promotioin());
                           },
                           child: dashButton('assets/images/info.png',
-                              AppColors.homeBGcolor, 'Information', Colors.white),
+                              AppColors.homeBGcolor, 'Promotion', Colors.white),
                         )
                       ],
                     ),

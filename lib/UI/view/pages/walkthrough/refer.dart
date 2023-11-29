@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:investment/UI/view/bottomNav/card/card.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/const/app_colors.dart';
 import 'package:investment/widget/custom_appbar.dart';
@@ -18,7 +17,7 @@ class Refer extends StatelessWidget {
         padding:
             EdgeInsets.only(left: 40.w, right: 40.w, top: 40.h, bottom: 40.h),
         child: Container(
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +61,7 @@ class Refer extends StatelessWidget {
                         onPressed: () async {
                           await Clipboard.setData(
                               const ClipboardData(text: "2342FX"));
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                             content: Text('Link copied to clipboard'),
                             duration: Duration(seconds: 2),
                           ));

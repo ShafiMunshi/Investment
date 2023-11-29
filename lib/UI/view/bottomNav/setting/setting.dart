@@ -13,8 +13,8 @@ class Setting extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.violetlightClr,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Container(
+        physics: const BouncingScrollPhysics(),
+        child: SizedBox(
           // height: 812.h,
           width: 375.w,
           child: Column(
@@ -66,7 +66,7 @@ class Setting extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -131,7 +131,7 @@ listileBtn(title) {
   return ListTile(
     minVerticalPadding: 16.r,
     style: ListTileStyle.drawer,
-    contentPadding: EdgeInsets.only(left: 0),
+    contentPadding: const EdgeInsets.only(left: 0),
     title: Text(
       title,
       style: TextStyle(

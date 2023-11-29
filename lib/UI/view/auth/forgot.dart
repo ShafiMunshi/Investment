@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:investment/UI/view/auth/login.dart';
 import 'package:investment/UI/widgets/input_text_feild.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/const/app_colors.dart';  
@@ -28,7 +27,7 @@ class Forgot extends GetView<AuthController> {
                   onPressed: () {
                     Get.back();
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back,
                     color: Colors.white,
                   )),
@@ -114,7 +113,7 @@ myDialog() {
           ),
           InkWell(
               onTap: () {
-                Get.to(DashBoard());
+                Get.to(const DashBoard());
               },
               child: loginWidget(AppColors.stackContainer, AppString.chek)),
         ],

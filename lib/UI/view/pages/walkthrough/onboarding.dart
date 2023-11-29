@@ -13,9 +13,9 @@ class Onboard extends StatelessWidget {
     return PageView(
       scrollDirection: Axis.horizontal,
       children: [
-        Walk1(),
+        const Walk1(),
         Walk2(),
-        Walk3(),
+        const Walk3(),
       ],
     );
   }

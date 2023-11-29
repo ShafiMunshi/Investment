@@ -14,7 +14,7 @@ class BtmNavBar extends StatefulWidget {
 }
 
 class _BtmNavBarState extends State<BtmNavBar> {
-  List<Widget> _pages = [DashBoard(), Wallet(), Cardss(), Setting()];
+  List<Widget> _pages = [const DashBoard(), const Wallet(), const Cardss(), const Setting()];
 
   int _selectedIndex = 0;
   void _onItemTap(int index) {
@@ -30,7 +30,7 @@ class _BtmNavBarState extends State<BtmNavBar> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         iconSize: 25.h,
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_outlined),
             label: 'Dashboard',

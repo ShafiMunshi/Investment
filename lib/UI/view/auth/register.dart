@@ -1,9 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:investment/UI/route/route.dart';
-import 'package:investment/UI/view/auth/forgot.dart';
 import 'package:investment/UI/view/bottomNav/btmNavbar.dart';
 import 'package:investment/UI/widgets/input_text_feild.dart';
 import 'package:investment/UI/widgets/widgets.dart';
@@ -11,7 +9,6 @@ import 'package:investment/const/app_colors.dart';
 import 'package:investment/const/app_string.dart';
 import 'package:investment/controller/auth_controller.dart';
 
-import '../bottomNav/Dashboard/dash_board.dart';
 
 class Register extends GetView<AuthController> {
   Register({Key? key}) : super(key: key);

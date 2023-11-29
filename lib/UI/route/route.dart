@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:get/get.dart';
 import 'package:investment/UI/view/auth/login.dart';
@@ -8,7 +7,6 @@ import 'package:investment/UI/view/bottomNav/Dashboard/withdraw.dart';
 import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk2.dart';
 import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk3.dart';
 import 'package:investment/UI/view/pages/walkthrough/walk-coponent/walk_1.dart';
-import 'package:investment/controller/auth_controller.dart';
 
 import '../../splash/splash_screen.dart';
 
@@ -18,6 +16,7 @@ class AppRoutes {
   static const String walk1 = "/Walk-1";
   static const String splash = "/Splash-Sreen";
   static const String login = "/login";
+  // ignore: constant_identifier_names
   static const String forget_pass = "/forget_pass";
   static const String register = "/register";
   static const String withdraw = "/withdraw";
@@ -27,12 +26,12 @@ class AppRoutes {
   List<GetPage> getpages = [
     GetPage(
       name: splash,
-      page: () => SplashScreen(),
+      page: () => const SplashScreen(),
       transition: Transition.leftToRight,
     ),
     GetPage(
       name: walk1,
-      page: () => Walk1(),
+      page: () => const Walk1(),
       transition: Transition.leftToRight,
     ),
     GetPage(
@@ -42,7 +41,7 @@ class AppRoutes {
     ),
     GetPage(
       name: walk3,
-      page: () => Walk3(),
+      page: () => const Walk3(),
       transition: Transition.leftToRight,
     ),
     GetPage(
@@ -57,7 +56,7 @@ class AppRoutes {
     ),
     GetPage(
       name: withdraw,
-      page: () => Withdraw(),
+      page: () => const Withdraw(),
       transition: Transition.leftToRight,
     ),
     GetPage(

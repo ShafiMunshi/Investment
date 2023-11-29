@@ -13,7 +13,7 @@ class Wallet extends StatelessWidget {
     return Scaffold(
       // floatingActionButton: floatingbtn(),
       backgroundColor: AppColors.lightWhiteClr,
-      body: Container(
+      body: SizedBox(
         height: 812.h,
         width: 375.w,
         child: Stack(children: [
@@ -31,8 +31,8 @@ class Wallet extends StatelessWidget {
                   height: 19.h,
                 ),
                 //Listview
-                Container(
-                  height: 95.h,
+                SizedBox(
+                  height: 97.h,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
