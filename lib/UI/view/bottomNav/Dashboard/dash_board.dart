@@ -7,8 +7,6 @@ import 'package:investment/UI/view/pages/walkthrough/refer.dart';
 import 'package:investment/const/app_colors.dart';
 import 'package:investment/controller/api/currency/utils.dart';
 import 'package:share_plus/share_plus.dart';
-
-
 import '../../../widgets/widgets.dart';
 
 class DashBoard extends StatefulWidget {
@@ -21,15 +19,6 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   @override
   void initState() {
-    // this listen called in getx on initialization
-    // btcListen();
-    // bnbListen();
-    // ethListen();
-    // dogeListen();
-    // trxListen();
-    // sandListen();
-    // nexoListen();
-    // shibListen();
     super.initState();
   }
   bool ispressed = false;
@@ -44,7 +33,7 @@ class _DashBoardState extends State<DashBoard> {
           clipBehavior: Clip.hardEdge,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 72.r, left: 16.r, right: 17.r),
+              padding: EdgeInsets.only(top: 40.r, left: 16.r, right: 17.r),
               height: 251.h,
               width: double.infinity,
               color: AppColors.homeBGcolor,
@@ -101,7 +90,7 @@ class _DashBoardState extends State<DashBoard> {
                   ),
                   //Currency Section
                   SizedBox(
-                    height: 97.h,
+                    height: 100.h,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -236,8 +225,8 @@ class _DashBoardState extends State<DashBoard> {
                     ),
 
                     // Recent Transaction Section
-                    Expanded(
-                      // height: 315.h,
+                    SizedBox(
+                      height: 550,
                       child: Obx(() => ListView(
                         physics: const BouncingScrollPhysics(),
                         children: [
@@ -260,16 +249,22 @@ class _DashBoardState extends State<DashBoard> {
                           // trxx('assets/icons/call_received_24px.png',
                           //     AppColors.callInClr, 'Access Bank', 'N4000'),
                         ],
-                      ),)
+                      ),),
                     ),
                     SizedBox(
                       height: 3.h,
                     ),
-                    viewAll()
+                    viewAll(),
                   ],
                 ),
               ),
             ),
+
+
+            // Positioned(
+
+            // )
+
           ],
         ),
       ),

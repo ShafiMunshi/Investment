@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investment/const/app_colors.dart';
+import 'package:investment/main.dart';
 
 fundWidget(btnTxt) {
   return Dialog(
@@ -45,7 +46,6 @@ fundWidget(btnTxt) {
               ),
               //Card Section
 
-              
               amountSelector(
                 'assets/images/ngg.png',
                 'GBP',
@@ -56,7 +56,6 @@ fundWidget(btnTxt) {
               SizedBox(
                 width: 5.w,
               ),
-            
             ],
           ),
           SizedBox(
@@ -133,7 +132,7 @@ amountSelector(flag, txt, amount, txtClr, bgClr) {
   );
 }
 
-smalTxt2(txt,{ double size=10.0}) {
+smalTxt2(txt, {double size = 10.0}) {
   return Text(
     txt,
     style: TextStyle(
@@ -184,62 +183,156 @@ viewAll() {
 }
 
 Widget trxx(iconss, iconBG, title, trxValue) {
-  return 
-     Container(
-      alignment: Alignment.center,
-      height: 56.h,
-      decoration: const BoxDecoration(
-          border: Border.symmetric(
-              horizontal: BorderSide(
-        color: Colors.grey,
-        width: 1,
-      ))),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        CircleAvatar(
-            backgroundColor: Colors.transparent,
-            child: Image.network(
-              iconss,
-              width: 30.w,
-            )),
-        SizedBox(
-          width: 13.w,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                  color: AppColors.currencyClr,
-                  fontSize: 14.sp,
-                  fontFamily: 'Circular Std',
-                  fontWeight: FontWeight.w500),
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
-            Text(
-              '28 Jun,2022',
-              style: TextStyle(
-                  color: AppColors.greytrxClr,
-                  fontSize: 10.sp,
-                  fontFamily: 'Gelion',
-                  fontWeight: FontWeight.w400),
-            ),
-          ],
-        ),
-        const Spacer(),
-        Text(
-          trxValue,
-          style: TextStyle(
-              color: AppColors.currencyClr,
-              fontSize: 16.sp,
-              fontFamily: 'Gelion',
-              fontWeight: FontWeight.w600),
-        ),
-      ]),
-   
+  return Container(
+    alignment: Alignment.center,
+    height: 56.h,
+    decoration: const BoxDecoration(
+        border: Border.symmetric(
+            horizontal: BorderSide(
+      color: Colors.grey,
+      width: 1,
+    ))),
+    child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      CircleAvatar(
+          backgroundColor: Colors.transparent,
+          child: Image.network(
+            iconss,
+            width: 30.w,
+          )),
+      SizedBox(
+        width: 13.w,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+                color: AppColors.currencyClr,
+                fontSize: 14.sp,
+                fontFamily: 'Circular Std',
+                fontWeight: FontWeight.w500),
+          ),
+          SizedBox(
+            height: 2.h,
+          ),
+          Text(
+            '28 Jun,2022',
+            style: TextStyle(
+                color: AppColors.greytrxClr,
+                fontSize: 10.sp,
+                fontFamily: 'Gelion',
+                fontWeight: FontWeight.w400),
+          ),
+        ],
+      ),
+      const Spacer(),
+      Text(
+        trxValue,
+        style: TextStyle(
+            color: AppColors.currencyClr,
+            fontSize: 16.sp,
+            fontFamily: 'Gelion',
+            fontWeight: FontWeight.w600),
+      ),
+    ]),
+  );
+}
+
+Widget incomeTrxx(vip, quantity, dailyIncome, withdrawals) {
+  return Container(
+    alignment: Alignment.center,
+    height: 56.h,
+    decoration: const BoxDecoration(
+        border: Border.symmetric(
+            horizontal: BorderSide(
+      color: Colors.grey,
+      width: 1,
+    ))),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center, children: [
+      CircleAvatar(
+        backgroundColor: Colors.transparent,
+        child: Text(vip),
+      ),
+      SizedBox(
+        width: 13.w,
+      ),
+      Text(
+        quantity,
+        style: TextStyle(
+            color: AppColors.LoginBlack,
+            fontSize: 10.sp,
+            fontFamily: 'gelion',
+            fontWeight: FontWeight.w500),
+      ),
+      SizedBox(width: 20.w),
+      Text(
+        dailyIncome,
+        style: TextStyle(
+            color: AppColors.LoginBlack,
+            fontSize: 10.sp,
+            fontFamily: 'gelion',
+            fontWeight: FontWeight.w600),
+      ),
+       SizedBox(width: 20.w),
+      Text(
+        withdrawals,
+        style: TextStyle(
+            color: AppColors.LoginBlack,
+            fontSize: 10.sp,
+            fontFamily: 'Gelion',
+            fontWeight: FontWeight.w600),
+      ),
+    ]),
+  );
+}
+Widget incomeTrxxTitle(vip, quantity, dailyIncome, withdrawals) {
+  return Container(
+    alignment: Alignment.center,
+    height: 56.h,
+    decoration: const BoxDecoration(
+      color: AppColors.greenAccentclr,
+       ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center, children: [
+      CircleAvatar(
+        backgroundColor: Colors.transparent,
+        child: Text(vip),
+      ),
+      SizedBox(
+        width: 13.w,
+      ),
+      Text(
+        quantity,
+        style: TextStyle(
+            color: AppColors.currencyClr,
+            fontSize: 16.sp,
+            fontFamily: 'gelion',
+            fontWeight: FontWeight.w600),
+      ),
+      SizedBox(width: 20.w),
+      Text(
+        dailyIncome,
+        style: TextStyle(
+            color: AppColors.currencyClr,
+            fontSize: 16.sp,
+            fontFamily: 'gelion',
+            fontWeight: FontWeight.w600),
+      ),
+       SizedBox(width: 20.w),
+      Text(
+        withdrawals,
+        style: TextStyle(
+            color: AppColors.currencyClr,
+            fontSize: 16.sp,
+            fontFamily: 'gelion',
+            fontWeight: FontWeight.w600),
+      ),
+    ]),
   );
 }
 

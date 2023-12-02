@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investment/UI/view/bottomNav/Dashboard/dash_board.dart';
 import 'package:investment/UI/view/bottomNav/card/card.dart';
 import 'package:investment/UI/view/bottomNav/setting/setting.dart';
-import 'package:investment/UI/view/bottomNav/wallet/wallet.dart';
-
+import 'package:investment/UI/view/bottomNav/wallet/income.dart';
 
 class BtmNavBar extends StatefulWidget {
   const BtmNavBar({Key? key}) : super(key: key);
@@ -14,7 +13,12 @@ class BtmNavBar extends StatefulWidget {
 }
 
 class _BtmNavBarState extends State<BtmNavBar> {
-  List<Widget> _pages = [const DashBoard(), const Wallet(), const Cardss(), const Setting()];
+  List<Widget> _pages = [
+    const DashBoard(),
+    const Income(),
+    const Cardss(),
+    const Setting()
+  ];
 
   int _selectedIndex = 0;
   void _onItemTap(int index) {
@@ -39,18 +43,14 @@ class _BtmNavBarState extends State<BtmNavBar> {
             icon: Icon(
               Icons.account_balance_wallet_outlined,
             ),
-            label: 'Wallet',
+            label: 'Income',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.card_giftcard_sharp,
-            ),
-            label: 'Card',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Setting',
-          )
+              icon: Icon(
+                Icons.card_giftcard_sharp,
+              ),
+              label: 'Wallet'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting')
         ],
         onTap: _onItemTap,
 

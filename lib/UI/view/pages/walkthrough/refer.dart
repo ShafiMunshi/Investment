@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:investment/UI/widgets/appbar.dart';
 import 'package:investment/UI/widgets/widgets.dart';
 import 'package:investment/const/app_colors.dart';
-import 'package:investment/widget/custom_appbar.dart';
+
 
 class Refer extends StatelessWidget {
   const Refer({super.key});
@@ -12,7 +13,7 @@ class Refer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.95),
-      appBar: kAppBar(title: 'Refer a friend'),
+      appBar: kAppbar(title: 'Refer a friend',context: context),
       body: Padding(
         padding:
             EdgeInsets.only(left: 40.w, right: 40.w, top: 40.h, bottom: 40.h),
@@ -35,7 +36,7 @@ class Refer extends StatelessWidget {
                   'Earn cash reward when your friends\nsignup and use your referral link or\ncode',
                   style: TextStyle(
                       color: AppColors.greytrxClr2,
-                      fontSize: 13.sp,
+                      fontSize: 15.sp,
                       fontFamily: 'Gelion',
                       fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
@@ -61,7 +62,8 @@ class Refer extends StatelessWidget {
                         onPressed: () async {
                           await Clipboard.setData(
                               const ClipboardData(text: "2342FX"));
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
                             content: Text('Link copied to clipboard'),
                             duration: Duration(seconds: 2),
                           ));
@@ -70,9 +72,7 @@ class Refer extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              SizedBox(height: 20.h),
               Padding(
                 padding: EdgeInsets.only(left: 40.w, right: 40.w),
                 child: Row(
@@ -81,15 +81,13 @@ class Refer extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        smalTxt2('Accepted', size: 12),
-                        SizedBox(
-                          height: 5.h,
-                        ),
+                        smalTxt2('Accepted', size: 16.sp),
+                        SizedBox(height: 5.h),
                         Text(
                           '2',
                           style: TextStyle(
                               color: Colors.purple,
-                              fontSize: 15.sp,
+                              fontSize: 17.sp,
                               fontFamily: 'Circular Std',
                               fontWeight: FontWeight.w500),
                         )
@@ -98,7 +96,7 @@ class Refer extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        smalTxt2('Amount Earned', size: 12),
+                        smalTxt2('Amount Earned', size: 16.sp),
                         SizedBox(
                           height: 5.h,
                         ),
@@ -106,7 +104,7 @@ class Refer extends StatelessWidget {
                           '\$200',
                           style: TextStyle(
                               color: Colors.purple,
-                              fontSize: 15.sp,
+                              fontSize: 17.sp,
                               fontFamily: 'Circular Std',
                               fontWeight: FontWeight.w500),
                         )

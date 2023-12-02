@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:investment/UI/view/pages/walkthrough/refer.dart';
 
 import '../../../../const/app_colors.dart';
 import '../../../widgets/widgets.dart';
 import '../component/trx_list_class.dart';
 
-class Wallet extends StatelessWidget {
-  const Wallet({Key? key}) : super(key: key);
+class Income extends StatelessWidget {
+  const Income({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class Wallet extends StatelessWidget {
             width: 375.w,
             child: Column(
               children: [
-                boldText('My Wallets'),
+                boldText('Incomes'),
                 SizedBox(
                   height: 19.h,
                 ),
@@ -60,22 +62,66 @@ class Wallet extends StatelessWidget {
             top: 220.h,
             child: Padding(
                 padding: EdgeInsets.only(left: 8.0.r, right: 12.r),
-                child: Trxlisst(
-                  heightt: 528.h,
-                    fundBtm: dashButton(
-                        'assets/icons/account_balance_wallet_24px.png',
-                        AppColors.stackContainer,
-                        'Fund Wallet',
-                        AppColors.trxClr),
-                    SmBtm: dashButton(
-                        'assets/icons/input_24px.png',
-                        AppColors.stackContainer,
-                        'Send Money',
-                        AppColors.trxClr),
-                    WitdrBtm: dashButton('assets/icons/input_24px2.png',
-                        AppColors.stackContainer, 'Withdraw', AppColors.trxClr),
-                    gap: 43.h,
-                    listViewHeight: 314.h) //That container
+                child: Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                     
+                       ElevatedButton(
+                        onPressed: () {
+                          Get.to(()=> const Refer());
+                        },
+                        child: const Text(
+                          'Deposit now',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'gelion',
+                              fontWeight: FontWeight.w800),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.greenAccentclr),
+                      ),
+                      SizedBox(width: 20.w),
+                       ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Invitation reward',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'gelion',
+                                fontWeight: FontWeight.w800),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.greenAccentclr)),
+                    ],
+                  ),
+
+                  SizedBox(height: 20.h),
+                  Container(
+                    height: 445.h,    
+                    width: 360.w,
+                    // width: double.infinity,
+                    decoration: BoxDecoration(color: AppColors.greenAccentclr.withOpacity(0.2)),
+                    child: Expanded(
+          // height: listViewHeight, //315.h,
+          child: ListView(
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              incomeTrxxTitle('Level', 'Deposit\nquantity', 'daily\nincome', 'withdraw'),
+              incomeTrxx('VIP1', '10.00-15.00', '10.07-10.12%', '10.07-10.12%'),
+              incomeTrxx('VIP2', '20.00-35.00', '12.07-10.29%', '12.12-12.29%'),
+              incomeTrxx('VIP3', '50.00-65.00', '15.09-15.75%', '15.32-15.12%'),
+              incomeTrxx('VIP4', '100.00-115.00', '20.17-20.98%', '20.07-20.32%'),
+              incomeTrxx('VIP5', '200.00-230.00', '25.12-25.23%', '25.23-25.45%'),
+              incomeTrxx('VIP6', '300.00-345.00', '30.13-30.56%', '30.34-30.41%'),
+              incomeTrxx('VIP7', '400.00-450.00', '35.13-35.34%', '35.65-35.11%'),
+             
+            
+            ],
+          ),
+        ),
+                  )
+                ]) //That container
                 ),
           ),
         ]),
@@ -105,7 +151,7 @@ Widget TrxList(Widget fundBtm, SmBtm, WitdrBtm, gap, listViewHeight) {
         ),
         SizedBox(height: gap //43.h,
             ),
-        recenTxt9('Recent Transaction'),
+        recenTxt9('Recent All Transaction'),
         Expanded(
           // height: listViewHeight, //315.h,
           child: ListView(

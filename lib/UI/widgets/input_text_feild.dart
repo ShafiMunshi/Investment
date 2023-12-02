@@ -115,10 +115,10 @@ class _PasswordTextFeildState extends State<PasswordTextFeild> {
             hintText: 'Enter your Password',
             hintStyle: const TextStyle(color: AppColors.smallTextclr),
             focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.blue, width: 1.0),
+              borderSide: BorderSide(color: Colors.grey, width: 1.0),
             ),
             enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.blue, width: 1.0),
+              borderSide: BorderSide(color: Colors.grey, width: 1.0),
             ),
             
             prefixIcon: const Icon(
